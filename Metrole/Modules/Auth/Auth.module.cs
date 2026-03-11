@@ -14,9 +14,6 @@ public class AuthModule : IModule
 
     public void Register(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
     {
-        services.AddScoped<JWTService>();
-        services.AddScoped<AuthService>();
-
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
             {
@@ -33,5 +30,8 @@ public class AuthModule : IModule
             });
 
         services.AddAuthorization();
+
+        services.AddScoped<JWTService>();
+        services.AddScoped<AuthService>();
     }
 }

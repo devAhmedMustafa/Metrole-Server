@@ -9,4 +9,10 @@ public class MetroleDbContext : DbContext
     public MetroleDbContext(DbContextOptions<MetroleDbContext> options) : base(options)
     {
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(MetroleDbContext).Assembly);
+        base.OnModelCreating(modelBuilder);
+    }
 }
