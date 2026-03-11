@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "Metrole.Modules.Auth";
+
+package auth;
+
+service AuthGrpc {
+    rpc GoogleLogin (GoogleLoginRequest) returns (LoginResponse);
+}
+
+message GoogleLoginRequest {
+    string idToken = 1;
+}
+
+message LoginResponse {
+    string userId = 1;
+    string token = 2;
+}

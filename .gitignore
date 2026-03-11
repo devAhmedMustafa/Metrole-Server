@@ -1,0 +1,13 @@
+.vscode/
+.idea/
+
+Metrole/bin
+Metrole/obj
+
+appsettings.json
+appsettings.*.json
+*.log
+
+*.user
+*.suo
+*.cache
