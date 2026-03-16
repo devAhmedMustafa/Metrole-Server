@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 public class MetroleDbContext : DbContext
 {
     public DbSet<Modules.Auth.User> Users { get; set; }
+    public DbSet<Modules.Routing.Route> Routes { get; set; }
 
     public MetroleDbContext(DbContextOptions<MetroleDbContext> options) : base(options)
     {

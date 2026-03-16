@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package tunneling;
+
+option csharp_namespace = "Metrole.Tunneling";
+
+service TunnelGrpc {
+    rpc OpenTunnel (OpenTunnelRequest) returns (TunnelMessage);
+}
+
+message OpenTunnelRequest {
+    string token = 1;
+    string subdomain = 2;
+    int32 port = 3;
+}
+
+message TunnelMessage {
+    enum Type {
+        ACK = 0;
+        FORWARD = 1;
+        DISCONNECT = 2;
+    }
+
+    Type type = 1;
+    string payload = 2;
+}

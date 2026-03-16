@@ -9,6 +9,9 @@ public class AuthModule : IModule
 {
     public void Configure(WebApplication app)
     {
+        app.UseAuthentication();
+        app.UseAuthorization();
+
         app.MapGrpcService<AuthGrpcService>();
     }
 

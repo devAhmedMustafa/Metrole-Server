@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package routing;
+
+service RouteGrpc {
+  rpc RegisterRoute (RegisterRouteRequest) returns (RegisterRouteResponse);
+}
+
+message RegisterRouteRequest {
+  string name = 1;
+  string url = 2;
+}
+
+message RegisterRouteResponse {
+  bool success = 1;
+  string message = 2;
+}

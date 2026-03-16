@@ -9,6 +9,8 @@
   <ItemGroup>
     <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
     <Protobuf Include="Modules\Auth\auth.proto" GrpcServices="Server" />
+    <Protobuf Include="Modules\Routing\routing.proto" GrpcServices="Server" />
+    <Protobuf Include="Modules\Tunneling\tunnel.proto" GrpcServices="Server" />
   </ItemGroup>
 
   <ItemGroup>
